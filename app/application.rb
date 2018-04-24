@@ -16,7 +16,7 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
       if @@items.include?(search_term)
-        resp.write "#{search_term} is added to your cart"
+        resp.write "added #{search_term}"
         @@cart << search_term
       else
         resp.write "We don't have that item"
