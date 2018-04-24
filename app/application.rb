@@ -17,9 +17,8 @@ class Application
     elsif req.path.match(/add/)
       if @@items.include?(search_term)
         resp.write "#{search_term} is added to your cart"
-        cart << search_term
+        @@cart << search_term
       end
-
     elsif req.path.match(/cart/)
       resp.write "#{cart}\n"
     else
