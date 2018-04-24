@@ -22,7 +22,12 @@ class Application
         resp.write "We do not have that item in stock."
       end
     elsif req.path.match(/cart/)
-      resp.write "#{cart}\n"
+      if @@cart.size == 0
+        resp.write "you have no items in your cart"
+      else
+        @@cart.each do |item|
+        resp.write "#{item}\n"
+      end
     else
       resp.write "Path Not Found"
     end
