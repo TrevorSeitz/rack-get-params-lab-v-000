@@ -19,7 +19,7 @@ class Application
         resp.write "#{search_term} is added to your cart"
         @@cart << search_term
       else
-        resp.write "We do not have that item in stock."
+        resp.write "We do not have that item"
       end
     elsif req.path.match(/cart/)
       if @@cart.size == 0
